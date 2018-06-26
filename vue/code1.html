@@ -1,0 +1,46 @@
+<script src="../vendor/vue.min.js"></script>
+<body>
+  <div id="app">
+    <ul class="languages">
+      <li v-for="language in languages" @click="callLanguage(language)">{{ language }}</li>
+    </ul>
+    <input type="text" v-model="newLanguage">
+    <button @click="addNewLanguage">Add language</button>
+  </div>
+</body>
+
+<script>
+new Vue({
+  el: '#app',
+  data: {
+    newLanguage: '',
+    languages: [
+      'JavaScript',
+      'Ruby'
+    ]
+  },
+  methods: {
+    callLanguage (language) {
+      alert(language)
+    },
+    addNewLanguage () {
+      if (this.newLanguage.length > 0) {
+        this.languages.push(this.newLanguage)
+      }
+    }
+  }
+})
+</script>
+
+<style>
+li {
+  cursor: pointer;
+  width: 100px;
+}
+li:hover {
+  background-color: skyblue;
+}
+input[type=text] {
+  border: 2px solid black;
+}
+</style>

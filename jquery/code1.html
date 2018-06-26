@@ -1,5 +1,5 @@
 <body>
-  <ul class="langs">
+  <ul class="languages">
     <li>JavaScript</li>
     <li>Ruby</li>
   </ul>
@@ -10,14 +10,14 @@
 <script src="../vendor/jquery.min.js"></script>
 <script>
 $(function() {
-  $('.langs li').on('click', function(){
+  $('.languages li').on('click', function(){
     alert($(this).text())
   })
   //新しく追加されたlanguageにclickイベントがバインドされない...
   $('.button').on('click', function(){
     var newLanguage = $('.input').val()
     if (newLanguage.length > 0) {
-      $('.langs').append($('<li>').text(newLanguage))
+      $('.languages').append($('<li>').text(newLanguage))
     }
   })
 })
