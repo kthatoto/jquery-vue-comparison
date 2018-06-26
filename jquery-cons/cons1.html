@@ -1,0 +1,32 @@
+
+<body>
+  <ul class="langs">
+    <li>JavaScript</li>
+    <li>Ruby</li>
+  </ul>
+  <input type="text">
+  <button class="button">Add language</button>
+</body>
+
+<script src="../jquery.min.js"></script>
+<script>
+$(function() {
+  $('.langs li').on('click', function(){
+    alert($(this).text())
+  })
+  $('.button')
+})
+</script>
+
+<style>
+li {
+  cursor: pointer;
+  width: 100px;
+}
+li:hover {
+  background-color: skyblue;
+}
+input[type=text] {
+  border: 2px solid black;
+}
+</style>
