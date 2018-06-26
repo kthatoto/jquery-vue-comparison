@@ -1,10 +1,9 @@
-
 <body>
   <ul class="langs">
     <li>JavaScript</li>
     <li>Ruby</li>
   </ul>
-  <input type="text">
+  <input type="text" class="input">
   <button class="button">Add language</button>
 </body>
 
@@ -14,7 +13,13 @@ $(function() {
   $('.langs li').on('click', function(){
     alert($(this).text())
   })
-  $('.button')
+  //新しく追加されたlanguageにclickイベントがバインドされない...
+  $('.button').on('click', function(){
+    var newLanguage = $('.input').val()
+    if (newLanguage.length > 0) {
+      $('.langs').append($('<li>').text(newLanguage))
+    }
+  })
 })
 </script>
 
